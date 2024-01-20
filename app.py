@@ -17,9 +17,3 @@ if st.button("Download"):
     st.video(file_path)
 
 
-    st.download_button(
-        label="Download Video",
-        filename=f"{video.title}.mp4",
-        mime_type="video/mp4",
-        data=file_path,
-    )
