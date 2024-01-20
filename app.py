@@ -14,5 +14,5 @@ if st.button("Download"):
     file_path = stream.download()
     st.text("Download complete!")
     # Display video
-    st.video(file_path)
-    st.download_button("Download",videoo)
+    yt = st.video(file_path)
+    st.download_button("Download", yt)
