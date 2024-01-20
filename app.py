@@ -15,3 +15,4 @@ if st.button("Download"):
     st.text("Download complete!")
     # Display video
     st.video(file_path)
+    st.download_button(file_name=file_path)
