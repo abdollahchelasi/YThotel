@@ -8,11 +8,11 @@ from pytube import YouTube
 link = st.text_input("Enter URL : ")
 
 if st.button("Download"):
-    video = YouTube(link)
-    stream = video.streams.get_highest_resolution()
+    videoo = YouTube(link)
+    stream = videoo.streams.get_highest_resolution()
     st.text("Downloading...")
     file_path = stream.download()
     st.text("Download complete!")
     # Display video
     st.video(file_path)
-    st.download_button("Download",video)
+    st.download_button("Download",videoo)
