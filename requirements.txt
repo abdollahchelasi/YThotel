@@ -1,5 +1,2 @@
-easyocr==1.7.0
-instaloader==4.10.1
-protobuf==3.12.4
 pytube==15.0.0
 streamlit==1.29.0
