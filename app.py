@@ -11,22 +11,25 @@ video_id = video_id_match.group(1) if video_id_match else None
 
 if video_id:
     video = YouTube(f"https://www.youtube.com/watch?v={video_id}")
-    available_streams = video.streams.filter(file_extension="mp4").all()
-    stream_quality = st.selectbox("Select Video Quality", [str(stream.resolution) for stream in available_streams])
 
-    if st.button("Download"):
-        selected_stream = next((stream for stream in available_streams if str(stream.resolution) == stream_quality), None)
-        if selected_stream:
+    # Use a progressive stream with audio
+    selected_stream = video.streams.filter(progressive=True, file_extension="mp4").first()
+
+    if selected_stream:
+        if st.button("Download"):
             st.text("Downloading...")
-            file_path = selected_stream.download()
+            file_path = selected_stream.download(filename=f"{video.title}.mp4", path=st.get_downloads_path())
             st.text("Download complete!")
-            # Display video
+
+            # Provide a download link and display the video with audio
+            st.markdown(f"**Downloaded video:** [Link](file://{file_path})")
             st.video(file_path)
         else:
-            st.text("Selected video quality is not available.")
+            st.text("No suitable video stream found with audio.")
+    else:
+        st.text("No suitable video streams found.")
 else:
     st.text("Invalid YouTube URL.")
-
 
 
 
