@@ -22,13 +22,14 @@ if st.button("Download"):
                 st.markdown(f"**Downloaded video:** [Link](file://{file_path})")
 
                 # Display the selected video quality
-                st.info(f"Selected video quality: {stream_quality}")
+                st.video(file_path, width=selected_stream.width)
             else:
                 st.text("Selected video quality is not available.")
         else:
             st.text("No suitable video stream found.")
     except:
         st.error("Please enter a valid YouTube URL.")
+
 
 
 
