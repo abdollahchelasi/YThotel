@@ -14,3 +14,5 @@ if st.button("Download"):
     # Display video
     st.video(file_path)
 
+else st.error("Link YouTube")
+
