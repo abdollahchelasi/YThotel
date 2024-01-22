@@ -25,7 +25,7 @@ if video_id:
        else:
            st.text("Selected video quality is not available.")
 else:
-   st.text("Invalid YouTube URL.")
+   st.error("Invalid YouTube URL.")
 
 
 
