@@ -1,22 +1,33 @@
 # https://www.youtube.com/watch?v=AqtLEgn1RoE
+
+
 import streamlit as st
-from pytube import YouTube
+from pytube import YouTube 
+import re
 
 link = st.text_input("Enter URL : ")
 
-if st.button("Download"):
-    video = YouTube(link)
-    stream = video.streams.filter(progressive=True).first()
-    st.text("Downloading...")
-    file_path = stream.download(filename=f"{video.title}.mp4", path=st.get_downloads_path())
-    st.text("Download complete!")
+video_id_match = re.search(r"(?:v=|\/)([0-9A-Za-z_-]{11})", link)
+video_id = video_id_match.group(1) if video_id_match else None
 
-# Display video
-if st.button("Play"):
-    st.video(file_path)
+if video_id:
+    video = YouTube(f"https://www.youtube.com/watch?v={video_id}")
+    available_streams = video.streams.filter(file_extension="mp4").all()
+    stream_quality = st.selectbox("Select Video Quality", [str(stream.resolution) for stream in available_streams])
 
+    if st.button("Download"):
+        selected_stream = next((stream for stream in available_streams if str(stream.resolution) == stream_quality), None)
+        if selected_stream:
+            st.text("Downloading...")
+            file_path = selected_stream.download(filename=f"{video.title}.mp4", path=st.get_downloads_path())  # Download to user's downloads path
+            st.text("Download complete!")
 
-
+            # Provide a download link for the downloaded video
+            st.markdown(f"**Downloaded video:** [Link](file://{file_path})")
+        else:
+            st.text("Selected video quality is not available.")
+else:
+    st.text("Invalid YouTube URL.")
 
 
 
