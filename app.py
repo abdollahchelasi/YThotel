@@ -7,16 +7,12 @@ import re
 
 link = st.text_input("Enter URL : ")
 
+video_id_match = re.search(r"(?:v=|\/)([0-9A-Za-z_-]{11})", link)
+video_id = video_id_match.group(1) if video_id_match else None
 
 
 
-
-if st.button("OK"):
-   
-   video_id_match = re.search(r"(?:v=|\/)([0-9A-Za-z_-]{11})", link)
-   video_id = video_id_match.group(1) if video_id_match else None
-   
-   
+if video_id:
    video = YouTube(f"https://www.youtube.com/watch?v={video_id}")
    available_streams = video.streams.filter(file_extension="mp4").all()
    stream_quality = st.selectbox("Select Video Quality", [str(stream.resolution) for stream in available_streams])
@@ -33,7 +29,6 @@ if st.button("OK"):
            st.text("Selected video quality is not available.")
 else:
    st.error("Invalid YouTube URL.")
-
 
 
 
