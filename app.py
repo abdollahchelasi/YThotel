@@ -1,8 +1,13 @@
 # https://www.youtube.com/watch?v=AqtLEgn1RoE
 
+# https://www.youtube.com/watch?v=AqtLEgn1RoE
+
 import streamlit as st
 from pytube import YouTube 
 import re
+
+
+st.image("logo.png")
 
 link = st.text_input("Enter URL : ",)
 
@@ -30,10 +35,6 @@ if video_id:
            st.text("Selected video quality is not available.")
 else:
    st.error("Invalid YouTube URL.")
-
-
-
-
 
 
 
