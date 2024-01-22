@@ -1,11 +1,12 @@
 # https://www.youtube.com/watch?v=AqtLEgn1RoE
 
-
 import streamlit as st
 from pytube import YouTube 
 import re
 
-link = st.text_input("Enter URL : ")
+link = st.text_input("Enter URL : ",)
+
+st.button("OK",link)
 
 video_id_match = re.search(r"(?:v=|\/)([0-9A-Za-z_-]{11})", link)
 video_id = video_id_match.group(1) if video_id_match else None
@@ -29,9 +30,6 @@ if video_id:
            st.text("Selected video quality is not available.")
 else:
    st.error("Invalid YouTube URL.")
-
-
-
 
 
 
