@@ -1,5 +1,4 @@
 # https://www.youtube.com/watch?v=AqtLEgn1RoE
-
 import streamlit as st
 from pytube import YouTube
 
@@ -7,21 +6,15 @@ link = st.text_input("Enter URL : ")
 
 if st.button("Download"):
     video = YouTube(link)
-    stream = video.streams.get_highest_resolution()
+    stream = video.streams.filter(progressive=True).first()
     st.text("Downloading...")
-    file_path = stream.download()
+    file_path = stream.download(filename=f"{video.title}.mp4", path=st.get_downloads_path())
     st.text("Download complete!")
 
-    # Display video
+# Display video
+if st.button("Play"):
     st.video(file_path)
 
-    # Add download button
-    st.download_button(
-        label="Download Video",
-        filename=f"{video.title}.mp4",
-        mime_type="video/mp4",
-        data=file_path,
-    )
 
 
 
