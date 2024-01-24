@@ -1,17 +1,37 @@
 # https://www.youtube.com/watch?v=AqtLEgn1RoE
 
-# https://www.youtube.com/watch?v=AqtLEgn1RoE
-
 import streamlit as st
 from pytube import YouTube 
 import re
 
+st.set_page_config(page_title="VeTube - Garden City Hotel Dubai",page_icon="logo.png",)
 
-st.image("logo.png")
+with open('c.css') as f:
+    st.markdown(f"<style> {f.read()} </style>",unsafe_allow_html=True)
+
+
+c1, c2=st.columns(2)
+
+with c1:
+
+    st.image("logo.png",width=110)
+    st.text("Garden City Hotel Dubai")
+    st.divider()
+
+
+with c2:
+    st.header("ve TUBE")
+    st.text("Download Video YouTube")
+    st.markdown("""
+Search the YouTube video link and the video will be sent to you
+""")
+    
+    
+  
 
 link = st.text_input("Enter URL : ",)
 
-st.button("OK",link)
+st.button("Search",link)
 
 video_id_match = re.search(r"(?:v=|\/)([0-9A-Za-z_-]{11})", link)
 video_id = video_id_match.group(1) if video_id_match else None
@@ -34,32 +54,37 @@ if video_id:
        else:
            st.text("Selected video quality is not available.")
 else:
-   st.error("Invalid YouTube URL.")
-
-
-
-# import streamlit as st
-# from pytube import YouTube
-
-# link = st.text_input("Enter URL : ")
-
-# if st.button("Download"):
-#     try:
-#         video = YouTube(link)
-#         stream = video.streams.get_highest_resolution()
-#         st.text("Downloading...")
-#         file_path = stream.download()
-#         st.text("Download complete!")
-#         # Display video
-#         st.video(file_path)
-#     except:
-#         st.error("Please enter a valid YouTube URL.")
-
-   
+   st.error("Search YouTube video link .")
 
 
 
 
+with st.expander(label="Garden City Hotel Dubai",expanded=True):
+    
+
+
+    st.markdown("""
+Garden City Hotel is a New and Fresh & clean Hotel right in the middle of the Trading Places of Deira, Dubai in United Arab Emirates. Your place to rest during your budget value shopping,  satisfying all your needs from the shops around the Naif and Deira area. We provide a safe & secure environment for you, a Home away from Home, enjoying the personal services from our colleagues.
+            
+""")
+    st.divider()
+
+    st.caption("""
+# A D D R E S S
+
+GARDEN CITY HOTEL
+
+35 A st Naif Dubai, United Arab Emirates
+
+Phone: +00971-4-8808831
+
+Email:
+               
+ info@gardencityhoteldubai.com
+""")
 
 
 
+st.divider()
+
+st.markdown("[Made by -> ABDOLLAH CHELASI](https://abdollahchelasi.streamlit.app)")
