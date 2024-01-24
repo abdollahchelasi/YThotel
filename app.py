@@ -87,4 +87,4 @@ Email:
 
 st.divider()
 
-st.markdown("[Made by -> ABDOLLAH CHELASI](https://abdollahchelasi.streamlit.app)")
+st.markdown("[Powered by -> ABDOLLAH CHELASI](https://abdollahchelasi.streamlit.app)")
