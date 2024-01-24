@@ -43,7 +43,11 @@ p{
 }
 
 
-
+video{
+    border-style: groove;
+    border-color: black;
+    border-radius: 11px;
+}
 
 a{
     background: linear-gradient(to left,rgb(14, 4, 4),rgb(49, 17, 16));
