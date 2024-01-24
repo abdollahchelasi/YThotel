@@ -1,5 +1,7 @@
 # https://www.youtube.com/watch?v=AqtLEgn1RoE
 
+# https://www.youtube.com/watch?v=AqtLEgn1RoE
+
 import streamlit as st
 from pytube import YouTube 
 import re
@@ -61,7 +63,7 @@ else:
 
 with st.expander(label="Garden City Hotel Dubai",expanded=True):
     
-
+    st.video("city.mp4",)
 
     st.markdown("""
 Garden City Hotel is a New and Fresh & clean Hotel right in the middle of the Trading Places of Deira, Dubai in United Arab Emirates. Your place to rest during your budget value shopping,  satisfying all your needs from the shops around the Naif and Deira area. We provide a safe & secure environment for you, a Home away from Home, enjoying the personal services from our colleagues.
@@ -76,13 +78,22 @@ GARDEN CITY HOTEL
 
 35 A st Naif Dubai, United Arab Emirates
 
-Phone: +00971-4-8808831
-
-Email:
-               
- info@gardencityhoteldubai.com
+Phone: +00971-4-8808831          
+ 
 """)
+    c1,c2,c3 = st.columns(3)
+    with c1:
+        st.image('logo.png',width=60)
 
+    
+    
+    with c2:
+        st.markdown("[Whatsapp](tel:+971502259313)")
+
+    with c3:
+        st.markdown("[Website](https://www.gardencityhoteldubai.com)")
+    
+        st.markdown("[Email](info@gardencityhoteldubai.com)")
 
 
 st.divider()
