@@ -1,0 +1,81 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lalezar&family=Rubik+Burned&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,100;1,900&display=swap');
+
+.main.st-emotion-cache-uf99v8.ea3mdgi3{
+    background: linear-gradient(to left,rgb(77, 38, 37),rgb(49, 17, 16));
+}
+
+
+.st-emotion-cache-18ni7ap.ezrtsby2{
+    background: linear-gradient(to left,rgb(77, 38, 37),rgb(49, 17, 16));
+}
+
+.st-emotion-cache-sxup30.ef3psqc12{
+    background: linear-gradient(to left,rgb(24, 18, 32),rgb(100, 59, 100));
+    border-style: groove;
+    border-color: aliceblue;
+}
+
+.st-emotion-cache-10trblm.e1nzilvr1{
+    font-family: 'Rubik Burned', system-ui;
+    color: aliceblue;
+}
+
+
+
+.st-emotion-cache-183lzff.exotz4b0{
+    font-family: 'Rubik Burned', system-ui;
+    color: aliceblue;
+}
+.st-emotion-cache-sxup30.ef3psqc12:hover{
+    background: linear-gradient(to left,rgb(127, 95, 168),rgb(197, 55, 197));
+
+}
+
+p{
+    /* font-family: 'Lalezar', system-ui; */
+    /* /* font-family: 'Rubik Burned', system-ui; */
+    color: rgb(149, 149, 150); 
+    font-family: 'Exo 2', sans-serif;
+    font-weight: bold;
+}
+
+
+
+
+a{
+    background: linear-gradient(to left,rgb(14, 4, 4),rgb(49, 17, 16));
+    text-decoration: none;
+    color: aliceblue;
+    padding: 8px;
+    border-radius: 6px;
+    border-style: groove;
+    border-color: aliceblue;
+    font-weight: bold;
+    font-size: 2vh;
+}
+
+a:hover{
+    text-decoration: none;
+    background: linear-gradient(to left,rgb(95, 26, 14),rgb(59, 8, 59));
+
+}
+
+.st-emotion-cache-1629p8f.e1nzilvr2{
+    background: linear-gradient(to left,rgb(240, 105, 81),rgb(197, 55, 197));
+    text-align: center;
+    align-items: center;
+    padding: 6px;
+    border-radius: 9px;
+    margin-bottom: 20px;
+}
+
+
+
+
+
+#MainMenu {visibility : hidden;}
+footer {visibility : hidden;}
+.block-container {direction : ltr}
