@@ -88,7 +88,7 @@ Phone: +00971-4-8808831
     
     
     with c2:
-        st.markdown("[Whatsapp](tel:+971502259313)")
+        st.markdown("[Whatsapp](https://wa.me/+971502259313)")
 
     with c3:
         st.markdown("[Website](https://www.gardencityhoteldubai.com)")
