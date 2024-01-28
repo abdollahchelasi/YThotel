@@ -49,6 +49,9 @@ if video_id:
            st.text("Downloading...")
            file_path = selected_stream.download()
            st.text("Download complete!")
+           st.divider()
+           st.text("Click to download the video and wait a few moments for the download to take effect")
+           
            # Display video
            st.video(file_path)
        else:
