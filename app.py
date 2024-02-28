@@ -20,7 +20,7 @@ with c1:
 
 
 with c2:
-    st.header("ve TUBE")
+    st.header("VE TUBE")
     st.text("Download Video YouTube")
     st.write("""
 Search the YouTube video link and the video will be sent to you
@@ -66,13 +66,13 @@ with st.expander(label="Garden City Hotel Dubai",expanded=True):
     
     st.video("city.mp4",)
 
-    st.write("""
+    st.header("""
 Garden City Hotel is a New and Fresh & clean Hotel right in the middle of the Trading Places of Deira, Dubai in United Arab Emirates. Your place to rest during your budget value shopping,  satisfying all your needs from the shops around the Naif and Deira area. We provide a safe & secure environment for you, a Home away from Home, enjoying the personal services from our colleagues.
             
 """)
     st.divider()
 
-    st.write("""
+    st.header("""
 # A D D R E S S
 
 GARDEN CITY HOTEL
